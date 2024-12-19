@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
 				allowNull: false,
 			},
 			location: {
-				type: DataTypes.STRING,
+				type: DataTypes.JSONB,
 			},
 			cloud_upload_path: {
 				type: DataTypes.STRING,
@@ -29,9 +29,8 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.TEXT,
 			},
 			type: {
-				type: DataTypes.INTEGER,
+				type: DataTypes.TEXT,
 				allowNull: false,
-				defaultValue: 1, // Default to 'Celebrating Success'
 			},
 			meta: {
 				type: DataTypes.JSONB,
@@ -49,17 +48,6 @@ module.exports = (sequelize, DataTypes) => {
 			},
 		},
 		{
-			// Getter method to map the integer values to labels
-			getterMethods: {
-				issueType() {
-					const issueTypes = {
-						1: 'Celebrating Success',
-						2: 'Shared Observations',
-						3: 'Shared Solutions',
-					}
-					return issueTypes[this.type] || 'Unknown'
-				},
-			},
 			// Sequelize table options
 			tableName: 'recordings',
 			timestamps: true,

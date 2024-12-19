@@ -18,7 +18,7 @@ module.exports = {
 				allowNull: false,
 			},
 			location: {
-				type: Sequelize.STRING,
+				type: Sequelize.JSONB,
 			},
 			cloud_upload_path: {
 				type: Sequelize.STRING,
@@ -28,7 +28,7 @@ module.exports = {
 				type: Sequelize.TEXT,
 			},
 			type: {
-				type: Sequelize.INTEGER,
+				type: Sequelize.TEXT,
 				allowNull: false,
 			},
 			meta: {
