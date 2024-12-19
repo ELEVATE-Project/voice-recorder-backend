@@ -57,7 +57,7 @@ module.exports = (sequelize, DataTypes) => {
 						2: 'Shared Observations',
 						3: 'Shared Solutions',
 					}
-					return issueTypes[this.is_issue] || 'Unknown'
+					return issueTypes[this.type] || 'Unknown'
 				},
 			},
 			// Sequelize table options
