@@ -4,8 +4,7 @@ const responses = require('@helpers/responses')
 
 module.exports = async function (req, res, next) {
 	try {
-		const internalAccess =
-			req.headers.internal_access_token && process.env.ACCESS_TOKEN === req.headers.access_token
+		const internalAccess = req.headers.access_token && process.env.ACCESS_TOKEN === req.headers.access_token
 		if (internalAccess) return next()
 		else
 			throw responses.failureResponse({
